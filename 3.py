@@ -29,23 +29,15 @@ def chunks(l, n):
 # Re-calc row for pts
 d = [set(calc_prio(i) for i in row) for row in d]
 groups = list(chunks(d, 3))
-found = False
 total2 = 0
 
 for group in groups:
-    found = False
-
-    for row in group:
-        if found:
-            break
-
-        for v in row:
-            if found:
-                break
-
-            if v in group[0] and v in group[1] and v in group[2]:
-                found = True
-                total2 += v
-                break
+    if len(group) < 3:
+        break
+    r1, r2, r3 = group
+    for v in r1:
+        if v in r2 and v in r3:
+            total2 += v
+            continue
 
 print("2: ", total2)
