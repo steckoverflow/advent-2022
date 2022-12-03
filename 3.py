@@ -38,6 +38,6 @@ for group in groups:
     for v in r1:
         if v in r2 and v in r3:
             total2 += v
-            continue
+            break
 
 print("2: ", total2)
