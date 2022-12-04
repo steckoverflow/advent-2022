@@ -1,8 +1,7 @@
 with open("4-input.txt", "r") as f:
     d = f.read().split("\n")
 
-total1 = 0
-total2 = 0
+total1 = total2 = 0
 
 for r in d:
     if r == "":
