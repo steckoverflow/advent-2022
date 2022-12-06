@@ -29,8 +29,8 @@ for instruction in moves:
 
     # THIS IS FOR PART 1
     # for _ in range(0, int(n)):
-    # c = stacks[int(f)].pop()
-    # stacks[int(t)].append(c)
+    #     c = stacks[int(f)].pop()
+    #     stacks[int(t)].append(c)
 
     # THIS IS FOR PART 2
     c = stacks[int(f)][-int(n) :]
