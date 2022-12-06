@@ -12,5 +12,5 @@ def solve(d, n):
     return t
 
 
-print(solve(d, 4))
-print(solve(d, 14))
+print("Part 1: ", solve(d, 4))
+print("Part 2: ", solve(d, 14))
