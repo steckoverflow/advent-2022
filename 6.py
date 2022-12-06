@@ -6,9 +6,7 @@ def solve(d, n):
     t = 0
     for r in d:
         for i in range(n, len(r)):
-            m = r[i - n : i]
-            l = len(set(m))
-            if l == n:
+            if len(set(r[i - n : i])) == n:
                 t += i
                 break
     return t
