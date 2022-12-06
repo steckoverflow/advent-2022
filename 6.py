@@ -3,15 +3,15 @@ with open("6-input.txt", "r") as f:
 
 
 def solve(d, n):
-    total = 0
-    for row in d:
-        for i in range(n, len(row)):
-            m = row[i - n : i]
+    t = 0
+    for r in d:
+        for i in range(n, len(r)):
+            m = r[i - n : i]
             l = len(set(m))
             if l == n:
-                total += i
+                t += i
                 break
-    return total
+    return t
 
 
 print(solve(d, 4))
