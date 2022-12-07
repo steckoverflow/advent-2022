@@ -7,9 +7,8 @@ current_path = ""
 for cmd in d:
     if not cmd:
         continue
-    
-    # Path management
-    if "$ cd" in cmd:
+
+    if "$ cd" in cmd:  # path management
         if ".." in cmd:
             new_path = ("/".join([v for v in current_path.split("/")[:-1]])).replace("//", "/")
             current_path = new_path
@@ -20,12 +19,10 @@ for cmd in d:
             dirs[current_path] = []
         continue
 
-    # If we do ls just continue
-    if "$ ls" in cmd:
+    if "$ ls" in cmd:  # fuck ls
         continue
 
-    # Add file sum or dir to path index
-    if cmd.split(" ")[0].isdigit():
+    if cmd.split(" ")[0].isdigit():  # add file or dir to path
         dirs[current_path].append(int(cmd.split(" ")[0]))
     else:
         dir = cmd.split(" ")[-1]
