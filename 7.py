@@ -5,6 +5,9 @@ dirs = {}
 current_path = ""
 
 for cmd in d:
+    if not cmd:
+        continue
+    
     # Path management
     if "$ cd" in cmd:
         if ".." in cmd:
