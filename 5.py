@@ -28,14 +28,15 @@ for instruction in moves:
     n, f, t = instruction[1], instruction[3], instruction[5]
 
     # THIS IS FOR PART 1
-    # for _ in range(0, int(n)):
-    #     c = stacks[int(f)].pop()
-    #     stacks[int(t)].append(c)
+    for _ in range(0, int(n)):
+        c = stacks[int(f)].pop()
+        stacks[int(t)].append(c)
 
     # THIS IS FOR PART 2
-    c = stacks[int(f)][-int(n) :]
-    stacks[int(t)] = stacks[int(t)] + c
-    stacks[int(f)] = stacks[int(f)][: -int(n)]
+    # c = stacks[int(f)][-int(n) :]
+    # stacks[int(t)] = stacks[int(t)] + c
+    # stacks[int(f)] = stacks[int(f)][: -int(n)]
 
 # Joining together
+print(stacks)
 print("final: ", "".join([v.pop() for v in stacks.values() if len(v) != 0]).replace("[", "").replace("]", ""))
