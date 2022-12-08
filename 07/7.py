@@ -1,4 +1,4 @@
-with open("7-input.txt", "r") as f:
+with open("./07/7-ex.txt", "r") as f:
     d = f.read().split("\n")
 
 dirs = {}
