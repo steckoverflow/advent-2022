@@ -60,6 +60,7 @@ def move_tail(h, t):
 
 
 def render_grid(h, tails):
+    """This shit is broken with negative grid values. RIP"""
     max_x = max([h.x, *[t.x for t in tails]])
     max_y = max([h.y, *[t.y for t in tails]])
 
