@@ -105,10 +105,23 @@ def naive_dijkstras(graph, root):
 
 graph = {k: nodes[k]["al"] for k in nodes}
 root_node_id = nodes_pos[s]
-res = naive_dijkstras(graph, root_node_id)
 end_node_id = nodes_pos[e]
+res = naive_dijkstras(graph, root_node_id)
 print("Part 1: ", res[end_node_id])
 
+root_nodes = []
+for k, v in nodes.items():
+    pos = v["pos"]
+    x, y = pos
+    if height_grid[y][x] == 1:
+        root_nodes.append(nodes_pos[pos])
+
+lowest = []
+for root_node_id in root_nodes:
+    res = naive_dijkstras(graph, root_node_id)
+    lowest.append(res[end_node_id])
+
+print("Part 2: ", min(lowest))
 
 # Create an index of nodes that's an int, that points to pos in grid, and
 # Generate distance grid
